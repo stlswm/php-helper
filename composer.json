@@ -1,0 +1,30 @@
+{
+  "name": "stlswm/php-helper",
+  "description": "PHP开发助手类合集",
+  "keywords": [
+    "stlswm",
+    "php",
+    "helper"
+  ],
+  "authors": [
+    {
+      "name": "wang min",
+      "email": "stlswm@163.com",
+      "homepage": "http://www.stlswm.com"
+    }
+  ],
+  "license": "MIT",
+  "require": {
+    "php": ">=7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "stlswm\\PHPHelper\\": "src/"
+    },
+    "files": [
+    ]
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8"
+  }
+}
