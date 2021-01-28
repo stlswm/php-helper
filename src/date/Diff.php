@@ -4,7 +4,7 @@ namespace stlswm\PHPHelper\date;
 
 /**
  * Class Diff
- * @package PHPHelper\data\Diff
+ * @package PHPHelper\data
  * 日期差值
  */
 class Diff
