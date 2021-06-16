@@ -17,11 +17,23 @@ class Diff
      */
     public static function monthDay(string $date1, string $date2): array
     {
+        $res = [];
         $dateStart = date('Y-m-d', strtotime($date1));
-        if (strtotime($dateStart) > strtotime($date2)) {
-            $tmp = $date2;
-            $date2 = $dateStart;
-            $dateStart = $tmp;
+        $date2 = date('Y-m-d', strtotime($date2));
+        if (strtotime($dateStart) < strtotime($date2)) {
+            $res['operator'] = 'lt';
+        } else {
+            if (strtotime($dateStart) > strtotime($date2)) {
+                $tmp = $date2;
+                $date2 = $dateStart;
+                $dateStart = $tmp;
+                $res['operator'] = 'gt';
+            } else {
+                $res['operator'] = 'eq';
+                $res['month'] = 0;
+                $res['day'] = 0;
+                return $res;
+            }
         }
         [$Y1, $m1, $d1] = explode('-', $dateStart);
         [$Y2, $m2, $d2] = explode('-', $date2);
